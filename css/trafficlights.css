@@ -1,0 +1,96 @@
+div.light-container {
+    display: inline-block;
+    background-color: transparent;
+    margin: 5em;
+    border-radius: 7px;
+    border: 2px solid white
+}
+
+div.light {
+    width: 4em;
+    height: 4em;
+    margin: 1em;
+    border-radius: 2em;
+    background-color: transparent;
+    border: 2px solid white
+}
+
+div.light-red {
+    background-color: #e84c3d;
+}
+
+div.light-green {
+    background-color: #2db573;
+}
+
+div.light-off {
+    opacity: 0.5;
+    box-shadow: none;
+    transition: opacity 200ms, box-shadow 200ms;
+}
+
+div.light-on {
+    transition: opacity 200ms, box-shadow 200ms;
+}
+
+div.light-green.light-on {
+    box-shadow: 0px 0px 1em 0.1em rgba(0,255,0,0.9);
+}
+
+div.light-red.light-on {
+    box-shadow: 0px 0px 1em 0.1em rgba(255,0,0,0.9);
+}
+
+div.light-blink {
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
+div.light-red.light-blink {
+    animation-name: red-blink;
+}
+div.light-green.light-blink {
+    animation-name: green-blink;
+}
+
+
+
+@keyframes red-blink {
+    0% {
+      opacity: 0.5;
+      box-shadow: none;
+    }
+    20% {
+      opacity: 1;
+    }
+    25% {
+      box-shadow: 0px 0px 1em 0.1em rgba(255,0,0,0.9);
+    }
+    85% {
+      box-shadow:none;
+    }
+    100% {
+      opacity: 0.5;
+    }
+
+}
+
+@keyframes green-blink {
+    0% {
+      opacity: 0.5;
+      box-shadow: none;
+    }
+    20% {
+      opacity: 1;
+    }
+    25% {
+      box-shadow: 0px 0px 1em 0.1em rgba(0,255,0,0.9);
+    }
+    85% {
+      box-shadow: none;
+    }
+    100% {
+      opacity: 0.5;
+    }
+
+}
